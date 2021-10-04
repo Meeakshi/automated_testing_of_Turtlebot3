@@ -1,0 +1,51 @@
+[ {
+  "uid" : "d12be681b1c62f2b",
+  "name" : "run turtlebot3 in a static gazebo world",
+  "time" : {
+    "start" : 1633208699138,
+    "stop" : 1633208699139,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "43d36b40570963c2",
+  "name" : "run a simple test",
+  "time" : {
+    "start" : 1633208699153,
+    "stop" : 1633208699155,
+    "duration" : 2
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "f31f735468d70bbb",
+  "name" : "test image detection",
+  "time" : {
+    "start" : 1633208697245,
+    "stop" : 1633208699135,
+    "duration" : 1890
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1f7fd1a27442fab2",
+  "name" : "run turtlebot3 in a static gazebo world",
+  "time" : {
+    "start" : 1633208699156,
+    "stop" : 1633208759635,
+    "duration" : 60479
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "3885b0465ce9caa7",
+  "name" : "run turtlebot3 in a dynamic gazebo world",
+  "time" : {
+    "start" : 1633208699141,
+    "stop" : 1633208699151,
+    "duration" : 10
+  },
+  "status" : "failed",
+  "severity" : "normal"
+} ]
