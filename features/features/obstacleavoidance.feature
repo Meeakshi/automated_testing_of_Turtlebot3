@@ -1,16 +1,9 @@
 Feature: showing off behave
 
-  Scenario: run a simple test
-     Given we have behave installed
-      When we implement a test
-      Then behave will test it for us!
-
-  Scenario: run turtlebot3 in a static gazebo world
-     Given Catkin make and Devel setup bash 
-      When Run roslaunch for turtlebot3
-      #Then Test absolute avoidance using lidar sensor
-
-  #Scenario: run turtlebot3 in a dynamic gazebo world
-     #Given Catkin make and Devel setup bash 
-      #When Run roslaunch for turtlebot3
-      #Then test absolute avoidance using lidar sensor
+  Scenario: run turtlebot3 in an empty gazebo world for obstacle avoidance test
+      Given create a launch file with package name "test_simulation" and launch file name "turtlebot3_empty_world.launch"
+      Then Perform Catkin make, setup bash & roslaunch
+      When Process "roslaunch" has launched successfully
+      Then create a run file with package name "test_simulation" and file name "test_avoid_obstacle.py" with params ""
+      Then Run rorun for turtlebot3 navigation test
+      Then Finally close all terminals and exit execution

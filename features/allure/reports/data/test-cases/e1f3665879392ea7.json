@@ -1,0 +1,110 @@
+{
+  "uid" : "e1f3665879392ea7",
+  "name" : "run turtlebot3 in a dynamic gazebo world",
+  "historyId" : "bf15bd74b3ea08cf65d58741dedda5ed",
+  "time" : {
+    "start" : 1633470294844,
+    "stop" : 1633470445334,
+    "duration" : 150490
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given create a launch file with package name \"test_simulation\" and launch file name \"my_world_master.launch\"",
+      "time" : {
+        "start" : 1633470294845,
+        "stop" : 1633470294845,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Perform Catkin make, setup bash & roslaunch",
+      "time" : {
+        "start" : 1633470294846,
+        "stop" : 1633470345185,
+        "duration" : 50339
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then create a run file with package name \"test_simulation\" and file name \"test_point_test.py\" with params \"1 0 180\"",
+      "time" : {
+        "start" : 1633470345192,
+        "stop" : 1633470345209,
+        "duration" : 17
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then Run rorun for turtlebot3 navigation test",
+      "time" : {
+        "start" : 1633470345216,
+        "stop" : 1633470445333,
+        "duration" : 100117
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "test turtlebot3 navigation"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython2"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e1f3665879392ea7.json",
+  "parameterValues" : [ ]
+}

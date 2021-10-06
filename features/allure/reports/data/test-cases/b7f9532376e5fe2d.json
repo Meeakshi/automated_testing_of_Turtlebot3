@@ -1,0 +1,40 @@
+{
+  "uid" : "b7f9532376e5fe2d",
+  "name" : "run turtlebot3 in a static gazebo world",
+  "historyId" : "f20f4c19e8c4b44080ae4b1a4c3ee440",
+  "time" : {
+    "start" : 1633213363084,
+    "stop" : 1633213363085,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "test turtlebot3 navigation"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython2"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b7f9532376e5fe2d.json",
+  "parameterValues" : [ ]
+}

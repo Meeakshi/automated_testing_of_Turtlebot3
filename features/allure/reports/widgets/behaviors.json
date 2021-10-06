@@ -15,10 +15,10 @@
     "uid" : "602f73e0ffb4dc8673253129ee1c4689",
     "name" : "test turtlebot3 navigation",
     "statistic" : {
-      "failed" : 1,
+      "failed" : 0,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 2,
       "unknown" : 0,
       "total" : 2
     }

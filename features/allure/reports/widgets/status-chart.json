@@ -1,15 +1,5 @@
 [ {
-  "uid" : "d12be681b1c62f2b",
-  "name" : "run turtlebot3 in a static gazebo world",
-  "time" : {
-    "start" : 1633208699138,
-    "stop" : 1633208699139,
-    "duration" : 1
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "43d36b40570963c2",
+  "uid" : "306b5af2dde0d318",
   "name" : "run a simple test",
   "time" : {
     "start" : 1633208699153,
@@ -19,17 +9,37 @@
   "status" : "failed",
   "severity" : "normal"
 }, {
-  "uid" : "f31f735468d70bbb",
-  "name" : "test image detection",
+  "uid" : "55e7251ae331f177",
+  "name" : "run turtlebot3 in a dynamic gazebo world",
   "time" : {
-    "start" : 1633208697245,
-    "stop" : 1633208699135,
-    "duration" : 1890
+    "start" : 1633470710183,
+    "stop" : 1633470860692,
+    "duration" : 150509
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "1f7fd1a27442fab2",
+  "uid" : "2461b6dca6d69cc4",
+  "name" : "test image detection",
+  "time" : {
+    "start" : 1633219905157,
+    "stop" : 1633219906787,
+    "duration" : 1630
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ff3b49a73abf38a",
+  "name" : "run turtlebot3 in a static gazebo world",
+  "time" : {
+    "start" : 1633470710182,
+    "stop" : 1633470710182,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "605a96fa0e7d356a",
   "name" : "run turtlebot3 in a static gazebo world",
   "time" : {
     "start" : 1633208699156,
@@ -37,15 +47,5 @@
     "duration" : 60479
   },
   "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "3885b0465ce9caa7",
-  "name" : "run turtlebot3 in a dynamic gazebo world",
-  "time" : {
-    "start" : 1633208699141,
-    "stop" : 1633208699151,
-    "duration" : 10
-  },
-  "status" : "failed",
   "severity" : "normal"
 } ]

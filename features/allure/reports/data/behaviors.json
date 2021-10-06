@@ -1,54 +1,10 @@
 {
   "uid" : "b1a8273437954620fa374b796ffaacdd",
   "children" : [ {
-    "name" : "test image detection",
-    "children" : [ {
-      "name" : "test image detection",
-      "uid" : "f31f735468d70bbb",
-      "parentUid" : "46f9cb7f9711fc11b23923d742fed467",
-      "status" : "passed",
-      "time" : {
-        "start" : 1633208697245,
-        "stop" : 1633208699135,
-        "duration" : 1890
-      },
-      "flaky" : false,
-      "parameters" : [ ]
-    } ],
-    "uid" : "46f9cb7f9711fc11b23923d742fed467"
-  }, {
-    "name" : "test turtlebot3 navigation",
-    "children" : [ {
-      "name" : "run turtlebot3 in a static gazebo world",
-      "uid" : "d12be681b1c62f2b",
-      "parentUid" : "602f73e0ffb4dc8673253129ee1c4689",
-      "status" : "passed",
-      "time" : {
-        "start" : 1633208699138,
-        "stop" : 1633208699139,
-        "duration" : 1
-      },
-      "flaky" : false,
-      "parameters" : [ ]
-    }, {
-      "name" : "run turtlebot3 in a dynamic gazebo world",
-      "uid" : "3885b0465ce9caa7",
-      "parentUid" : "602f73e0ffb4dc8673253129ee1c4689",
-      "status" : "failed",
-      "time" : {
-        "start" : 1633208699141,
-        "stop" : 1633208699151,
-        "duration" : 10
-      },
-      "flaky" : false,
-      "parameters" : [ ]
-    } ],
-    "uid" : "602f73e0ffb4dc8673253129ee1c4689"
-  }, {
     "name" : "showing off behave",
     "children" : [ {
       "name" : "run a simple test",
-      "uid" : "43d36b40570963c2",
+      "uid" : "306b5af2dde0d318",
       "parentUid" : "00575a0400f3d87bab1196cfdb0ed1fc",
       "status" : "failed",
       "time" : {
@@ -60,7 +16,7 @@
       "parameters" : [ ]
     }, {
       "name" : "run turtlebot3 in a static gazebo world",
-      "uid" : "1f7fd1a27442fab2",
+      "uid" : "605a96fa0e7d356a",
       "parentUid" : "00575a0400f3d87bab1196cfdb0ed1fc",
       "status" : "broken",
       "time" : {
@@ -72,6 +28,50 @@
       "parameters" : [ ]
     } ],
     "uid" : "00575a0400f3d87bab1196cfdb0ed1fc"
+  }, {
+    "name" : "test image detection",
+    "children" : [ {
+      "name" : "test image detection",
+      "uid" : "2461b6dca6d69cc4",
+      "parentUid" : "46f9cb7f9711fc11b23923d742fed467",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633219905157,
+        "stop" : 1633219906787,
+        "duration" : 1630
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "46f9cb7f9711fc11b23923d742fed467"
+  }, {
+    "name" : "test turtlebot3 navigation",
+    "children" : [ {
+      "name" : "run turtlebot3 in a static gazebo world",
+      "uid" : "ff3b49a73abf38a",
+      "parentUid" : "602f73e0ffb4dc8673253129ee1c4689",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633470710182,
+        "stop" : 1633470710182,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "run turtlebot3 in a dynamic gazebo world",
+      "uid" : "55e7251ae331f177",
+      "parentUid" : "602f73e0ffb4dc8673253129ee1c4689",
+      "status" : "passed",
+      "time" : {
+        "start" : 1633470710183,
+        "stop" : 1633470860692,
+        "duration" : 150509
+      },
+      "flaky" : true,
+      "parameters" : [ ]
+    } ],
+    "uid" : "602f73e0ffb4dc8673253129ee1c4689"
   } ],
   "name" : "behaviors"
 }

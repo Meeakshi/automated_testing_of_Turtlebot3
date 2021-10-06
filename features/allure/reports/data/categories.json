@@ -5,20 +5,8 @@
     "children" : [ {
       "name" : "AssertionError\n",
       "children" : [ {
-        "name" : "run turtlebot3 in a dynamic gazebo world",
-        "uid" : "3885b0465ce9caa7",
-        "parentUid" : "a730cf0b0a23aabea6d11aa0391c8a76",
-        "status" : "failed",
-        "time" : {
-          "start" : 1633208699141,
-          "stop" : 1633208699151,
-          "duration" : 10
-        },
-        "flaky" : false,
-        "parameters" : [ ]
-      }, {
         "name" : "run a simple test",
-        "uid" : "43d36b40570963c2",
+        "uid" : "306b5af2dde0d318",
         "parentUid" : "a730cf0b0a23aabea6d11aa0391c8a76",
         "status" : "failed",
         "time" : {
@@ -38,7 +26,7 @@
       "name" : "KeyboardInterrupt\n",
       "children" : [ {
         "name" : "run turtlebot3 in a static gazebo world",
-        "uid" : "1f7fd1a27442fab2",
+        "uid" : "605a96fa0e7d356a",
         "parentUid" : "7493cb043ad3419ece224a15a55adceb",
         "status" : "broken",
         "time" : {

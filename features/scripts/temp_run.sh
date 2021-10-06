@@ -1,3 +1,3 @@
 #!/bin/bash 
 cd ~/catkin_ws/ && source devel/setup.bash
-rosrun "test_simulation" "pointtest.py" 0.1 0 0
+rosrun "test_simulation" "test_turtlebot3_obstacleavoidance.py"
