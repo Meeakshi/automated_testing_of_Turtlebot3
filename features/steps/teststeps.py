@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+
 from behave import *
 import os
 import subprocess
@@ -9,6 +12,15 @@ import signal
 import cv2
 import numpy as np
 import sys 
+from sys import exit
+import rospy
+import unittest
+import xmlrunner
+from geometry_msgs.msg import Twist
+from sensor_msgs.msg import LaserScan
+import time
+import os
+import math
 
 
 
@@ -62,7 +74,7 @@ def step_impl(context):
 		p=subprocess.Popen("gnome-terminal -- $SHELL -c '~/automation_pack/features/scripts/temp_launch.sh'",stdout=subprocess.PIPE,shell=True) 
 		p.wait()
 	output = p.communicate()[0]
-	time.sleep(30)
+	time.sleep(10)
 	if(p.returncode ==None):
 		assert True
 	else:
@@ -114,13 +126,33 @@ def step_impl(context):
 	time.sleep(20)
 	with open('logs.txt', 'w') as f:
 		p=subprocess.Popen("gnome-terminal -- $SHELL -c '~/automation_pack/features/scripts/temp_run.sh'",stdout=subprocess.PIPE,shell=True)
-		#p.wait()
-		#p= os.system('~/automation_pack/features/scripts/temp_run.sh',stdout=f) 
-	#p=subprocess.Popen("gnome-terminal -- $SHELL -c '~/automation_pack/features/scripts/temp_run.sh'",stdout=subprocess.PIPE,shell=True) 
-	#output = p.communicate()[0]
-	#print p.communicate()[0]
-	#checkIfProcessRunning('python')
-	time.sleep(30)
+		
+	time.sleep(20)
+	
+	print (p.returncode)
+	if(p.returncode == None):
+		assert True 
+	else:
+		assert False#assert context.failed is False
+	while checkIfProcessRunning('python'):
+		time.sleep(1)
+	print "Test execution complete"
+	filename="~/home/meenakshi/catkin_ws/src/test_simulation/results/results.xml"
+	filenamelink="""<a href='/home/meenakshi/catkin_ws/src/test_simulation/results/results.xml'>xml report</a>"""
+	#allure.attach('Hi there!', name='user attachment', attachment_type=allure.attachment_type.TEXT)
+	allure.attach(filename,name="unittest.xml" , attachment_type=allure.attachment_type.XML)
+	allure.attach(filenamelink,name="unittest" , attachment_type=allure.attachment_type.HTML)
+
+#************************************************************************************************************************************************************
+@Then('Run rorun for turtlebot3 OT test')
+def step_impl(context):
+	print("Start Rosrun python script to test navigation")
+	time.sleep(20)
+	with open('logs.txt', 'w') as f:
+		p=subprocess.Popen("gnome-terminal -- $SHELL -c '~/automation_pack/features/scripts/temp_run.sh'",stdout=subprocess.PIPE,shell=True)
+		
+	time.sleep(10)
+
 	print (p.returncode)
 	if(p.returncode == None):
 		assert True 
@@ -150,16 +182,12 @@ def after_all(context):
 #************************************************************************************************************************************************************
 
 def checkIfProcessRunning(processName):
-    '''
-    Check if there is any running process that contains the given name processName.
-    '''
-    #Iterate over the all the running process
-       
+         
     processName= processName.strip('"')
     
     for proc in psutil.process_iter():
         try:
-            # Check if process name contains the given name string.
+
             if processName.lower() in proc.name().lower():
 		print('{} process running'.format(processName))
                 return True
@@ -192,6 +220,7 @@ def processkill(context):
             pid = fields[0]
              
             # terminating process
+	    #exit(0)
             os.kill(int(pid), signal.SIGKILL)
         print("Process Successfully terminated")
          
@@ -215,6 +244,7 @@ def processkillbehave(context):
              
             # terminating process
             os.kill(int(pid), signal.SIGKILL)
+	    exit(0)
         print("Process Successfully terminated")
          
     except:
@@ -247,7 +277,7 @@ def loadimageforclassification(context, imageName):
 	#name = str(name)
 	findobj = 'car'#str(imageName)
 	#print findobj	
-	image = cv2.imread('/home/meenakshi/CNN/input/citytransport.jpg')
+	image = cv2.imread('/home/meenakshi/CNN/input/image_2.jpg')
 	image_height, image_width, _ = image.shape
 	# create blob from image
 	blob = cv2.dnn.blobFromImage(image=image, size=(300, 300), mean=(104, 117, 123), 
@@ -256,44 +286,88 @@ def loadimageforclassification(context, imageName):
 	model.setInput(blob)
 	# forward pass through the model to carry out the detection
 	output = model.forward()
+	
+	print (output)
+	listofnames = imageName.split(',')
+	for name in listofnames:
+		global flagtofind
+		flagtofind = 0
+		# loop over each of the detection
+		for detection in output[0, 0, :, :]:
+		    # extract the confidence of the detection
+		    confidence = detection[2]
+		    # draw bounding boxes only if the detection confidence is above...
+		    # ... a certain threshold, else skip
+		    if confidence > .4:
+			# get the class id
+			class_id = detection[1]
+			# map the class id to the class
+			#print(len(class_names))
+			#print(class_names)
+			class_name = class_names[int(class_id)-1]
+			compareobjectfound(class_name.lower(),name.strip('"'))
+			if(flagtofind > 0):
+				color = COLORS[int(class_id)]
+				# get the bounding box coordinates
+				box_x = detection[3] * image_width
+				box_y = detection[4] * image_height
+				# get the bounding box width and height
+				box_width = detection[5] * image_width
+				box_height = detection[6] * image_height
+				# draw a rectangle around each detected object
+				cv2.rectangle(image, (int(box_x), int(box_y)), (int(box_width), int(box_height)), color, thickness=2)
+				# put the FPS text on top of the frame
+				cv2.putText(image, class_name, (int(box_x), int(box_y - 5)), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
+				#print(len(class_name.lower()))
+				#print(len(imageName.lower().strip('"')))
+				#print(class_name.lower() is imageName.lower().strip('"'))
+				#imageName = imageName.lower().strip('"')
+				cv2.imshow('image', image)
+				cv2.imwrite('/home/meenakshi/CNN/outputs/image_result.jpg', image)
+				cv2.waitKey(0)
+				cv2.destroyAllWindows()
 
-	# loop over each of the detection
-	for detection in output[0, 0, :, :]:
-	    # extract the confidence of the detection
-	    confidence = detection[2]
-	    # draw bounding boxes only if the detection confidence is above...
-	    # ... a certain threshold, else skip
-	    if confidence > .4:
-		# get the class id
-		class_id = detection[1]
-		# map the class id to the class
-		class_name = class_names[int(class_id)-1]
-		color = COLORS[int(class_id)]
-		# get the bounding box coordinates
-		box_x = detection[3] * image_width
-		box_y = detection[4] * image_height
-		# get the bounding box width and height
-		box_width = detection[5] * image_width
-		box_height = detection[6] * image_height
-		# draw a rectangle around each detected object
-		cv2.rectangle(image, (int(box_x), int(box_y)), (int(box_width), int(box_height)), color, thickness=2)
-		# put the FPS text on top of the frame
-		cv2.putText(image, class_name, (int(box_x), int(box_y - 5)), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
-		print(class_name)
-		if class_name == findobj:
-			print("Test pass")
+		if(flagtofind ==0):
+			print("Test failed Object {} not found" .format(name))
+			#assert False 
 		else:
-			print("Test Fail")
+			print("Test pass Object {} found & number of obejcts found are {}" .format(name.strip(),flagtofind))
+			assert True
 
-		cv2.imshow('image', image)
-		cv2.imwrite('/home/meenakshi/CNN/outputs/image_result.jpg', image)
-		cv2.waitKey(0)
-		cv2.destroyAllWindows()
+def compareobjectfound(class_name,name):
+	global flagtofind
+	if  name.strip() == class_name.strip():
+		print("Test pass Object {} found" .format(name.strip()))
+		flagtofind = flagtofind+1
+	
+	#if flagtofind == 0:
+	#	print("Test failed Object {} not found" .format(namenotfound))
+#******************************************************************************************************************************
+@Then('Open reports')
+def openreport(context):
+	print("Open allure report")
+	p=subprocess.Popen("gnome-terminal -- $SHELL -c '~/automation_pack/features/scripts/temp_report.sh'",stdout=subprocess.PIPE,shell=True) 
+	
+#******************************************************************************************************************************
+def callback(msg):
+	    if msg.ranges[0] > 0.5: #and msg.ranges[90] > laserthreshold2 and msg.ranges[270] > laserthreshold2:
+		print("No Obstacle found") 
+		print(msg.ranges[0])
 
+	    else:
+		print("Obstacle found") 
 
-
-
-
+#******************************************************************************************************************************
+def fetchscandata():
+	time.sleep(20)
+	print(rospy.get_published_topics())
+	print('==============Start=======================')
+	rospy.init_node('obstacle_avoidance')
+	counter = 0
+	sub=rospy.Subscriber('/scan', LaserScan, callback)
+	pub=rospy.Publisher('/cmd_vel', Twist)
+	move=Twist()
+	rospy.spin()
 
 
 
