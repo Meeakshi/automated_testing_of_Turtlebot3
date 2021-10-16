@@ -1,6 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"failed","Sat Oct 02 14:04:59 PDT 2021","Sat Oct 02 14:04:59 PDT 2021","2","","","","","","run a simple test",""
-"passed","Tue Oct 05 14:51:50 PDT 2021","Tue Oct 05 14:54:20 PDT 2021","150509","","","","","","run turtlebot3 in a dynamic gazebo world",""
-"passed","Sat Oct 02 17:11:45 PDT 2021","Sat Oct 02 17:11:46 PDT 2021","1630","","","","","","test image detection",""
-"passed","Tue Oct 05 14:51:50 PDT 2021","Tue Oct 05 14:51:50 PDT 2021","0","","","","","","run turtlebot3 in a static gazebo world",""
-"broken","Sat Oct 02 14:04:59 PDT 2021","Sat Oct 02 14:05:59 PDT 2021","60479","","","","","","run turtlebot3 in a static gazebo world",""
