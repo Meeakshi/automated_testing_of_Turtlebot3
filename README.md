@@ -43,7 +43,7 @@ For turtlebot 3 packages clone product from https://github.com/Meeakshi/product_
 
 # Test	Commands:
 ## Prerequisite:                     	
-Cd to feature directory
+Cd to features directory inside automation_pack folder
 
 ## Test Navigation:
 behave -f allure_behave.formatter:AllureFormatter -o allure/results ./navigation.feature --no-capture
