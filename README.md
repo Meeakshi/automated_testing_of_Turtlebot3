@@ -7,17 +7,6 @@ The overall objective of this project is to build an automation pack that can be
 •	Testing time for one test case execution can be reduced form minutes to seconds which enables the defect tracking process much faster.
 •	Retest and regressive testing are feasible and fast through automation compared to manual. 
 
-
-# Directory:
-![image](https://user-images.githubusercontent.com/76649126/137586735-9a89dcc3-4f54-43d9-8790-3ad440d431aa.png)
-
-1	allure - Allure folder contains json allure reports that gets generated after every scenario execution
-2	features -	All the test cases are written inside features folder with “.feature” file extension.
-3	reports -	Xml parser.py code is saved here for reports
-4	scripts -	Roslaunch and Rosrun execution files are created here and saved here during runtime.  
-5	steps -	Step implementation for every test step is available here in teststeps.py file. 
-
-
 # Installations:
 conda install -c conda-forge behave 
 pip install unittest
@@ -27,6 +16,20 @@ pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorfl
 pip install tensorboard
 pip install numpy pyqtgraph
 
+# Directory:
+![image](https://user-images.githubusercontent.com/76649126/137586735-9a89dcc3-4f54-43d9-8790-3ad440d431aa.png)
+
+1	allure - Allure folder contains json allure reports that gets generated after every scenario execution
+
+2	features -	All the test cases are written inside features folder with “.feature” file extension.
+
+3	reports -	Xml parser.py code is saved here for reports
+
+4	scripts -	Roslaunch and Rosrun execution files are created here and saved here during runtime.  
+
+5	steps -	Step implementation for every test step is available here in teststeps.py file. 
+
+## For turtlebot 3 packages clone product from https://github.com/Meeakshi/product_tobe_tested_turtlebot3.git and switch to master branch
 
 # Test	Commands:
 ## Prerequisite:                     	
