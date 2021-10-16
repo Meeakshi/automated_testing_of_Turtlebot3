@@ -23,6 +23,8 @@ pip install tensorboard
 
 pip install numpy pyqtgraph
 
+Clone automation pack from https://github.com/Meeakshi/automated_testing_of_Turtlebot3.git and switch to master branch
+
 # Directory:
 ![image](https://user-images.githubusercontent.com/76649126/137586735-9a89dcc3-4f54-43d9-8790-3ad440d431aa.png)
 
