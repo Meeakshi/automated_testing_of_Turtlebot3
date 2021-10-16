@@ -29,7 +29,7 @@ pip install numpy pyqtgraph
 
 5	steps -	Step implementation for every test step is available here in teststeps.py file. 
 
-## For turtlebot 3 packages clone product from https://github.com/Meeakshi/product_tobe_tested_turtlebot3.git and switch to master branch
+For turtlebot 3 packages clone product from https://github.com/Meeakshi/product_tobe_tested_turtlebot3.git and switch to master branch
 
 # Test	Commands:
 ## Prerequisite:                     	
