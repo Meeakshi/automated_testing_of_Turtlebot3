@@ -8,12 +8,19 @@ The overall objective of this project is to build an automation pack that can be
 •	Retest and regressive testing are feasible and fast through automation compared to manual. 
 
 # Installations:
+
 conda install -c conda-forge behave 
+
 pip install unittest
+
 pip install allure-behave 
+
 pip install msgpack argparse
+
 pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.8.0-cp27-none-linux_x86_64.whl 
+
 pip install tensorboard
+
 pip install numpy pyqtgraph
 
 # Directory:
