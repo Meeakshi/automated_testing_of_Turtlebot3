@@ -57,3 +57,14 @@ behave -f allure_behave.formatter:AllureFormatter -o allure/results ./image_dete
 ## To view reports:
 allure serve results
 
+# Reports
+
+![navigation_report](https://user-images.githubusercontent.com/76649126/137587258-54e46147-d247-42e0-a74e-35a14c88c769.png)
+
+
+![obstacle_avoidance_report](https://user-images.githubusercontent.com/76649126/137587274-b408805c-19ab-4842-a267-1e18f6b352c9.png)
+
+
+![image_detection_report](https://user-images.githubusercontent.com/76649126/137587277-f39f1fc0-1011-42b6-a451-2d60766878e5.png)
+
+
