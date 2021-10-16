@@ -1,4 +1,3 @@
-# automated_testing_of_Turtlebot3
 # Automated testing of Turtlebot3
 
 The overall objective of this project is to build an automation pack that can be used for automated testing of various mobile robots and their important basic features like navigation, obstacle avoidance and image classification. For this thesis turtlebot 3 models( Burger, waffle, waffle-pi) have been used. The primary purpose of this thesis is to promote use of automation for quality assurance and testing in simulation. Below listed are some of the significances of using this developed automation pack,
@@ -10,7 +9,7 @@ The overall objective of this project is to build an automation pack that can be
 
 
 # Directory:
-├── python │ ├── classification │ │ ├── classify.py │ │ └── README.md │ ├── detection │ │ ├── detect_img.py │ │ └── detect_vid.py │ └── requirements.txt └── README.md
+![image](https://user-images.githubusercontent.com/76649126/137586735-9a89dcc3-4f54-43d9-8790-3ad440d431aa.png)
 
 1	allure	Allure folder contains json allure reports that gets generated after every scenario execution
 2	features	All the test cases are written inside features folder with “.feature” file extension.
