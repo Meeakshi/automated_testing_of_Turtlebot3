@@ -29,12 +29,12 @@ pip install tensorboard
 pip install numpy pyqtgraph
 
 
-Features to be tested	Commands
-Prerequisite	Cd to feature directory
-Test Navigation	behave -f allure_behave.formatter:AllureFormatter -o allure/results ./navigation.feature --no-capture
-Test Obstacle avoidance	behave -f allure_behave.formatter:AllureFormatter -o allure/results ./ obstacle_avoidance.feature --no-capture
+Test	Commands:
+Prerequisite:                     	Cd to feature directory
+Test Navigation:    	              behave -f allure_behave.formatter:AllureFormatter -o allure/results ./navigation.feature --no-capture
+Test Obstacle avoidance:          	behave -f allure_behave.formatter:AllureFormatter -o allure/results ./ obstacle_avoidance.feature --no-capture
 
-Test image detection algorithm 	behave -f allure_behave.formatter:AllureFormatter -o allure/results ./image_detection.feature --no-capture
+Test image detection algorithm: 	  behave -f allure_behave.formatter:AllureFormatter -o allure/results ./image_detection.feature --no-capture
 
-To view reports	allure serve results
+To view reports:                  	allure serve results
 
