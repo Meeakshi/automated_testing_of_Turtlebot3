@@ -11,11 +11,11 @@ The overall objective of this project is to build an automation pack that can be
 # Directory:
 ![image](https://user-images.githubusercontent.com/76649126/137586735-9a89dcc3-4f54-43d9-8790-3ad440d431aa.png)
 
-1	allure	Allure folder contains json allure reports that gets generated after every scenario execution
-2	features	All the test cases are written inside features folder with “.feature” file extension.
-3	reports	Xml parser.py code is saved here for reports
-4	scripts	Roslaunch and Rosrun execution files are created here and saved here during runtime.  
-5	steps	Step implementation for every test step is available here in teststeps.py file. 
+1	allure - Allure folder contains json allure reports that gets generated after every scenario execution
+2	features -	All the test cases are written inside features folder with “.feature” file extension.
+3	reports -	Xml parser.py code is saved here for reports
+4	scripts -	Roslaunch and Rosrun execution files are created here and saved here during runtime.  
+5	steps -	Step implementation for every test step is available here in teststeps.py file. 
 
 
 # Installations:
