@@ -1,5 +1,5 @@
 # automated_testing_of_Turtlebot3
-Automated testing of Turtlebot3
+#Automated testing of Turtlebot3
 
 The overall objective of this project is to build an automation pack that can be used for automated testing of various mobile robots and their important basic features like navigation, obstacle avoidance and image classification. For this thesis turtlebot 3 models( Burger, waffle, waffle-pi) have been used. The primary purpose of this thesis is to promote use of automation for quality assurance and testing in simulation. Below listed are some of the significances of using this developed automation pack,
 •	Cost effective testing can be achieved because once development of this automation pack is complete one resource would be sufficient to execute and test the robot. 
@@ -9,7 +9,7 @@ The overall objective of this project is to build an automation pack that can be
 •	Retest and regressive testing are feasible and fast through automation compared to manual. 
 
 
-Directory:
+#Directory:
 ├── python │ ├── classification │ │ ├── classify.py │ │ └── README.md │ ├── detection │ │ ├── detect_img.py │ │ └── detect_vid.py │ └── requirements.txt └── README.md
 
 1	allure	Allure folder contains json allure reports that gets generated after every scenario execution
@@ -19,7 +19,7 @@ Directory:
 5	steps	Step implementation for every test step is available here in teststeps.py file. 
 
 
-Installations:
+#Installations:
 conda install -c conda-forge behave 
 pip install unittest
 pip install allure-behave 
@@ -29,12 +29,18 @@ pip install tensorboard
 pip install numpy pyqtgraph
 
 
-Test	Commands:
+#Test	Commands:
 Prerequisite:                     	Cd to feature directory
-Test Navigation:    	              behave -f allure_behave.formatter:AllureFormatter -o allure/results ./navigation.feature --no-capture
-Test Obstacle avoidance:          	behave -f allure_behave.formatter:AllureFormatter -o allure/results ./ obstacle_avoidance.feature --no-capture
 
-Test image detection algorithm: 	  behave -f allure_behave.formatter:AllureFormatter -o allure/results ./image_detection.feature --no-capture
+Test Navigation:
+behave -f allure_behave.formatter:AllureFormatter -o allure/results ./navigation.feature --no-capture
 
-To view reports:                  	allure serve results
+Test Obstacle avoidance:
+behave -f allure_behave.formatter:AllureFormatter -o allure/results ./ obstacle_avoidance.feature --no-capture
+
+Test image detection algorithm:
+behave -f allure_behave.formatter:AllureFormatter -o allure/results ./image_detection.feature --no-capture
+
+To view reports:
+allure serve results
 
