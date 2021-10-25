@@ -1,3 +1,3 @@
 #!/bin/bash 
 cd ~/catkin_ws/ && catkin_make && source devel/setup.bash
-roslaunch "turtlebot3_gazebo" "turtlebot3_world.launch"
+roslaunch "test_simulation" "my_world_master.launch"

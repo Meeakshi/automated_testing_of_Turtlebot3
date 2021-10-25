@@ -238,9 +238,11 @@ def processkillbehave(context):
         print("Error Encountered while running script")
 
 #******************************************************************************************************************************
-@Given('Run image detection algorithm and load images from a directory and find {}')
-def loadimageforclassification(context, imageName):
+@Given('Run image detection algorithm and load images {} from a directory and find {}')
+def loadimageforclassification(context, pathtoimage, imageName):
 	print("Start of test for image detection")
+	print(pathtoimage)
+	pathtoimage = pathtoimage.strip('"')
 
 	genericpath='/home/meenakshi/automation_pack/features/'
 	print(genericpath+"CNN/input/object_detection_classes_coco.txt")
@@ -260,7 +262,7 @@ def loadimageforclassification(context, imageName):
 	face_cascade = cv2.CascadeClassifier(genericpath+'CNN/cascades/haarcascade_frontalface_default.xml')
 	smile_cascade = cv2.CascadeClassifier(genericpath+'CNN/cascades/haarcascade_smile.xml')
 
-	image = cv2.imread(genericpath+'CNN/input/image_2.jpg')
+	image = cv2.imread(genericpath+'CNN/input/'+pathtoimage)
 	image_height, image_width, _ = image.shape
 
 	blob = cv2.dnn.blobFromImage(image=image, size=(300, 300), mean=(104, 117, 123), 
