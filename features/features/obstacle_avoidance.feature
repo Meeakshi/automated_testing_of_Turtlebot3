@@ -1,6 +1,6 @@
 Feature: showing off behave
 
-  Scenario: run turtlebot3 in an gazebo world for obstacle avoidance test
+  Scenario: TC1: run turtlebot3 in an gazebo world for obstacle avoidance test
       Given create a launch file with package name "turtlebot3_gazebo" and launch file name "turtlebot3_world.launch"
       Then Perform Catkin make, setup bash & roslaunch
       When Process "roslaunch" has launched successfully
@@ -10,7 +10,7 @@ Feature: showing off behave
       
 
 
-  Scenario: run turtlebot3 in an empty gazebo world for obstacle avoidance test
+  Scenario: TC2: run turtlebot3 in an empty gazebo world for obstacle avoidance test
       Given create a launch file with package name "test_simulation" and launch file name "my_world_master.launch"
       Then Perform Catkin make, setup bash & roslaunch
       When Process "roslaunch" has launched successfully

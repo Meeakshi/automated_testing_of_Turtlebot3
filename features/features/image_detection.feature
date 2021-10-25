@@ -1,12 +1,12 @@
 Feature: test image detection
 
-  Scenario: test image detection one object
+  Scenario: TC1: test image detection one object
      Given Run image detection algorithm and load images "image_2.jpg" from a directory and find "bicycle"
-     Then Open reports
+     #Then Open reports
 
-  Scenario: test image detection many objects
+  Scenario: TC2: test image detection many objects
      Given Run image detection algorithm and load images "image_2.jpg" from a directory and find "cat, person, car, bicycle"
-     Then Open reports
+     #Then Open reports
  
 
       #When image is deteced verify if the classified image is as expected "Dog, cat, Cycle"

@@ -69,7 +69,7 @@ def step_impl(context):
 		p=subprocess.Popen("gnome-terminal -- $SHELL -c '~/automation_pack/features/scripts/temp_launch.sh'",stdout=subprocess.PIPE,shell=True) 
 		p.wait()
 	output = p.communicate()[0]
-	time.sleep(20)
+	time.sleep(10)
 	if(p.returncode ==None):
 		assert True
 	else:
@@ -122,7 +122,7 @@ def step_impl(context):
 	with open('logs.txt', 'w') as f:
 		p=subprocess.Popen("gnome-terminal -- $SHELL -c '~/automation_pack/features/scripts/temp_run.sh'",stdout=subprocess.PIPE,shell=True)
 		
-	time.sleep(20)
+	time.sleep(10)
 	
 	print (p.returncode)
 	if(p.returncode == None):
